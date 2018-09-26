@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+        vue中属性不能用差值表达式，要用v-bind
+
+	1.下面的链接地址将无法打开； //报错Error compiling template:
+	2.VueJs中不能在任何html标签的属性值中使用{{ 属性值 }}进行设置操作
+	3.通过v-bind:href来进行属性值的绑定操作
+	4.通过:href缩写方式进行属性值的绑定
+				-->
+    <div id="app">
+        <h1 v-once>{{ title }}</h1>
+        <p> {{ sayHello() }}
+            <a href="{{ link }}">Baidu</a>
+            <a v-bind:href="link">Baidu</a>
+            <a :href='link'>Baidu</a>
+        </p>
+
+        <p v-html="baiduLink"></p>
+        <p v-text="baiduLink"></p>
+
+    </div>
+
+    <script src="https://cdn.staticfile.org/vue/2.5.17-beta.0/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                link: 'http://www.baidu.com',
+                title: 'BaiduYiia,NIjiuzhidao',
+                baiduLink: '<a href="http://www.baidu.com">Baidu</a>'
+            },
+            methods: {
+                sayHello: function() {
+                    this.title = "Hello Vue!";
+                    return this.title;
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>
