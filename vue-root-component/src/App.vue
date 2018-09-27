@@ -1,5 +1,8 @@
 <template>
-  <h1>Server Status: {{ status }}</h1>
+    <div>
+        <h1>Server Status: {{ status }}</h1>
+        <app-home></app-home>  
+    </div>
 </template>
 
 <script>
