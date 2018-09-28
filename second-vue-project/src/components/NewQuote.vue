@@ -12,6 +12,17 @@
 				<button class="btn btn-primary" 
 				@click.prevent="createNew">Add Quote</button>
                 <!-- ??为什么 -->
+
+                <!-- 阻止单击事件冒泡 
+                <a v-on:click.stop="doThis"></a>
+                提交事件不再重载页面 
+                <form v-on:submit.prevent="onSubmit"></form>
+                修饰符可以串联 
+                <a v-on:click.stop.prevent="doThat">
+                只有修饰符 
+                <form v-on:submit.prevent></form> -->
+
+
 			</div>
 		</form>
 	</div>
