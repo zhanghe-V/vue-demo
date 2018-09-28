@@ -73,7 +73,8 @@ module.exports = {
             'vue$': 'vue/dist/vue.esm.js'
         },
         extensions: ['*', '.js', '.vue', '.json'],
-        '@': path.resolve('./src/')
+        //'@': path.resolve('./src/')
+        //加了这句报错了
     },
     devServer: {
         historyApiFallback: true,
